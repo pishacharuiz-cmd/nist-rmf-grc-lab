@@ -1,0 +1,2 @@
+POAM_ID,Control_ID,Deficiency_Description,Remediation_Action,Risk_Level,Target_Completion_Date,Status
+POAM-01,AU-2 / AU-6,Log retention truncated to 7 days and remote log forwarding broken.,1. Reconfigure rsyslog for instant SIEM forwarding. 2. Expand volume allocation for 30-day local buffer. 3. Implement drop-out alert.,High,14 Business Days,Open
