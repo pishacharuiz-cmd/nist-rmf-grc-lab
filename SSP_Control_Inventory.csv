@@ -1,6 +1,6 @@
 Control_ID,Control_Family,Control_Name,Implementation_Type,Implementation_Status,Implementation_Description
-AC-2,Access Control,Account Management,Hybrid,Implemented,System utilizes Linux local user authentication paired with corporate LDAP. Accounts reviewed quarterly.
-AC-7,Access Control,Unsuccessful Logon Attempts,System-Specific,Implemented,Locks account after 5 consecutive failed login attempts within a 15-minute window.
-AU-2,Audit and Accountability,Event Logging,System-Specific,Deficient (POA&M-01),Local logs truncated to 7 days due to disk limits; remote log forwarding currently disrupted.
-AU-6,Audit Record Review,Analysis, and Reporting,Operational,Implemented,Weekly automated reviews of audit records executed by the security team.
-CM-2,Configuration Management,Baseline Configuration,System-Specific,Implemented,Production baselines managed via automated configuration scripts and tracked via Git.
+AC-2,Access Control,Account Management,Hybrid,Implemented,"System utilizes Linux local user authentication paired with corporate LDAP. Accounts reviewed quarterly."
+AC-7,Access Control,Unsuccessful Logon Attempts,System-Specific,Implemented,"Locks account after 5 consecutive failed login attempts within a 15-minute window."
+AU-2,Audit and Accountability,Event Logging,System-Specific,"Deficient (POA&M-01)","Local logs truncated to 7 days due to disk limits; remote log forwarding currently disrupted."
+AU-6,"Audit Record Review, Analysis, and Reporting",Operational,Implemented,"Weekly automated reviews of audit records executed by the security team."
+CM-2,Configuration Management,Baseline Configuration,System-Specific,Implemented,"Production baselines managed via automated configuration scripts and tracked via Git."
