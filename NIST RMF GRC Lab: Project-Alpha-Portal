@@ -1,0 +1,59 @@
+# NIST RMF GRC Lab: Project-Alpha-Portal
+
+A hands-on Governance, Risk, and Compliance (GRC) project simulating the end-to-end implementation of the **NIST Risk Management Framework (RMF - SP 800-37 Rev. 2)** for a mock critical infrastructure application.
+
+## 🎯 Objective
+The purpose of this lab is to bridge theoretical compliance frameworks with real-world execution. It demonstrates how to take a system through categorization, control selection, implementation assessment, remediation tracking (POA&M), authorization, and continuous monitoring.
+
+---
+
+## 🏛️ System Overview
+* **System Name:** Project-Alpha-Portal
+* **System Type:** Customer-facing web application processing sensitive user data and authentication.
+* **Framework Baseline:** NIST SP 800-53 Rev. 5 (Moderate Impact Baseline)
+
+---
+
+## 🔄 RMF Lifecycle Implementation
+
+| RMF Step | Phase | Key Artifact / Action | Status |
+| :--- | :--- | :--- | :--- |
+| **Step 0** | Prepare | Established enterprise risk context and roles (`System_Charter.md`) | ✅ Complete |
+| **Step 1** | Categorize | FIPS 199 Security Categorization (Confidentiality: Mod, Integrity: Mod, Availability: Low) | ✅ Complete |
+| **Step 2** | Select | NIST SP 800-53 Moderate Control Baseline selection (`SSP_Control_Inventory.csv`) | ✅ Complete |
+| **Step 3** | Implement | Documented technical and operational control implementations | ✅ Complete |
+| **Step 4** | Assess | Performed mock security assessment and gap analysis (`SAR_Assessment_Results.csv`) | ✅ Complete |
+| **Step 5** | Authorize | Generated Authorization Package and drafted risk acceptance decision | ✅ Complete |
+| **Step 6** | Monitor | Established continuous monitoring and log integrity strategy | ✅ Complete |
+
+---
+
+## 📝 Featured Audit Scenario & Remediation: The Log Retention Gap (Scenario 2)
+
+During the **Assess (Step 4)** phase, a critical control deficiency was discovered in the Audit and Accountability family. Below is an overview of how the gap was documented and tracked through a formal **Plan of Action and Milestones (POA&M)**.
+
+### The Finding
+* **The Context:** Due to a disk-space crunch, an administrator truncated local system log retention from 90 days down to **7 days** and broke remote log forwarding to the centralized SIEM.
+* **Control Families Impacted:** 
+  * `AU-2` (Event Logging)
+  * `AU-6` (Audit Record Review, Analysis, and Reporting)
+* **Real-World Risk:** If a security incident occurs, the organization lacks the historical log data required to perform forensic investigations, track lateral movement, or satisfy regulatory audit mandates.
+
+### The GRC Remediation (POA&M Entry)
+Rather than fixing the server configuration directly, the GRC workflow required logging a formal remediation ticket:
+1. **Remediation Action:** Reconfigure `rsyslog` to enforce instant remote forwarding to the central SIEM.
+2. **Storage Fix:** Expand local volume allocation to guarantee a 30-day local buffer.
+3. **Monitoring Guardrail:** Implement an alert that triggers a high-priority notification if logging services drop for more than 10 minutes.
+4. **Target Completion:** 14 Business Days.
+
+---
+
+## 📂 Repository Contents
+* `docs/`: Contains the foundational system charter, categorization rationale, and conmon strategy.
+* `artifacts/`: Contains sample tracking spreadsheets for the System Security Plan (SSP), Security Assessment Report (SAR), and POA&Ms.
+
+## 🛠️ Tools & Concepts Utilized
+* NIST SP 800-37 Rev. 2 (Risk Management Framework)
+* NIST SP 800-53 Rev. 5 (Security and Privacy Controls)
+* NIST SP 800-30 (Risk Assessment)
+* Markdown & Git for documentation and version control
