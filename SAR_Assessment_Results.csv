@@ -1,0 +1,6 @@
+Control_ID,Assessment_Method,Test_Result,Deficiency_Found
+AC-2,Examine / Test,Pass,None. Inactive accounts successfully disabled via automation rules.
+AC-7,Test,Pass,None. Account lockout triggered as expected after 5 attempts.
+AU-2,Examine / Test,FAIL,Local log retention set to 7 days instead of the required 90-day baseline; SIEM forwarding inactive.
+AU-6,Examine,Pass,None. Review logs are being generated and filed correctly.
+CM-2,Examine,Pass,None. Configuration baselines match documentation.
